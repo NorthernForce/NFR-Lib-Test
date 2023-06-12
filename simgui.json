@@ -1,0 +1,17 @@
+{
+  "NTProvider": {
+    "types": {
+      "/FMSInfo": "FMSInfo",
+      "/Shuffleboard/Autonomous/Autonomous routine?": "String Chooser",
+      "/Shuffleboard/Autonomous/Field": "Field2d",
+      "/Shuffleboard/Autonomous/Starting location?": "String Chooser"
+    },
+    "windows": {
+      "/Shuffleboard/Autonomous/Field": {
+        "window": {
+          "visible": true
+        }
+      }
+    }
+  }
+}
