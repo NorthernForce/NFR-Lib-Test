@@ -11,6 +11,7 @@ import org.northernforce.util.RobotContainer;
 
 import edu.wpi.first.math.geometry.Pose2d;
 import edu.wpi.first.wpilibj.TimedRobot;
+import edu.wpi.first.wpilibj.XboxController;
 import edu.wpi.first.wpilibj.shuffleboard.Shuffleboard;
 import edu.wpi.first.wpilibj.smartdashboard.SendableChooser;
 import edu.wpi.first.wpilibj2.command.Command;
@@ -35,6 +36,9 @@ public class Robot extends TimedRobot {
   @Override
   public void robotInit() {
     container = new RobotChooser(() -> new SquishyContainer(), Map.of("squishy", () -> new SquishyContainer())).getRobotContainer();
+    XboxController driverController = new XboxController(0);
+    XboxController manipulatorController = new XboxController(1);
+    container.bindOI(driverController, manipulatorController);
     poseChooser = new SendableChooser<>();
     autonomousChooser = new SendableChooser<>();
     for (var pair : container.getStartingLocations().entrySet())
